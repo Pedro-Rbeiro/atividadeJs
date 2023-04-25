@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 1</title>
+    <title>Media do aluno</title>
 </head>
-<body>
-    <span>1 Bimestre</span><br>
-    <input id="value_1" type="text"><br>
-    <span>2 Bimestre</span><br>
-    <input id="value_2" type="text"><br>
-    <span>3 Bimestre</span><br>
-    <input id="value_3" type="text"><br>
-    <span>4 Bimestre</span><br>
-    <input id="value_4" type="text" name="" ><br>
-    <button onclick="calcular()">Calcular</button>
-    <ul id="resultado"></ul>
+
+<body style="text-align: center;">
+
+    <h1>Aprovado ou reprovado</h1>
+    <span>1° Nota</span> <br>
+    <input id="nota_1" placeholder="Digite a 1° do aluno"> <br>
+
+    <span>2° Nota</span> <br>
+    <input id="nota_2" placeholder="Digite a 2° do aluno"> <br>
+
+    <span>3° Nota</span> <br>
+    <input id="nota_3" placeholder="Digite a 3° do aluno"> <br>
+
+    <span>4° Nota</span> <br>
+    <input id="nota_4" placeholder="Digite a 4° do aluno"> <br>
+    <br>
+    <button onclick="calcular()">Calcular Media</button>
+    <div id="div_resultado"></div>
     <script src="./script.js"></script>
 </body>
+
 </html>
