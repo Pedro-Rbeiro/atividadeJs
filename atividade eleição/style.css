@@ -1,0 +1,25 @@
+*{
+    
+    padding: 0;
+}
+body{
+    margin: 40px 0;
+    text-align: center
+}
+p{
+    margin: 10px 0;
+}
+label,input{
+    margin: 5px 0;
+}
+
+div{
+    font-weight: 800;
+    color: green;
+}
+label,input,button,div{
+    font-size: 20px;
+}
+.results{
+    margin: 10px 0;
+}
