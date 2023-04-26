@@ -1,2 +1,2 @@
 # atividadeJs
-Desenvolvido por Pedro R. 
+Desenvolvido por Pedro R.
