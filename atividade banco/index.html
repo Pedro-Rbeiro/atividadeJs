@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,19 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
-    <title>Calculo imc</title>
+    <title>banco</title>
 </head>
 <body>
-    <h1 class="calculo-text">Calculo IMC</h1>
-    <p class="input-numbers">
-        <label for="">Peso</label>
-        <input type="number" id="input-peso" placeholder="Ex: 70"> <br>
-        <label for="">Altura</label>
-        <input type="number" id="input-altura" placeholder="Ex: 185">
-    </p>
-    <button onclick="calcularImc()">Calcular imc</button>
+    <h1 class="bank-text">p7k bank</h1>
     <div id="resultado"></div>
+    <p class="input-numbers">
+        <label for="">Valor do saque</label>
+        <input type="number" id="input-saque" placeholder="Ex: 70"> <br>
+        <label for="">Valor do deposito</label>
+        <input type="number" id="input-deposito" placeholder="Ex: 185">
+    </p>
+    <button onclick="sacar()">Sacar</button>
+    <button onclick="depositar()">Depositar</button>
     <script src="./script.js"></script>
 </body>
 </html>
