@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+body{
+    text-align: center;
+}
+.calculo-text{
+    margin: 15px 0 0;
+}
+.input-numbers{
+    margin: 15px 0 15px;
+}
+.input-numbers>label,input{
+    margin: 10px 0 0;
+}
+#resultado{
+    margin: 10px 0 0;
+}
