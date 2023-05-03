@@ -3,6 +3,10 @@ function tabuada(){
     const numeroDiv = document.getElementById('tabuada')
     let recebeDiv = ""
     const multiNumber =document.getElementById('number').value
+    if(multiNumber == ""){
+        alert("Insira um valor!")
+        return
+    }
     while (i<10){
         i++
         let resultado = i*multiNumber
