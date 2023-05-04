@@ -16,6 +16,35 @@ body{
 .input-numbers>label,input{
     margin: 10px 0 0;
 }
+.valor-extrato{
+    font-weight: 500;
+}
+#extrato >p {
+    margin: 2px 0 0;
+}
+#extrato{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10px 0 0;
+}
 #resultado{
     margin: 10px 0 0;
+}
+#saque{
+    color: red;
+}
+#deposito{
+    color: green;
+}
+button{
+    background-color: white;
+    border: 1px solid black;
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover{
+    background-color: black;
+    color: white;
 }

@@ -18,12 +18,13 @@
     <div id="resultado"></div>
     <p class="input-numbers">
         <label for="">Valor do saque</label>
-        <input type="number" id="input-saque" placeholder="Ex: 70"> <br>
+        <input type="number" id="input-saque" placeholder="Ex: 70" min="0"> <br>
         <label for="">Valor do deposito</label>
-        <input type="number" id="input-deposito" placeholder="Ex: 185">
+        <input type="number" id="input-deposito" placeholder="Ex: 185" min="0">
     </p>
     <button onclick="sacar()">Sacar</button>
     <button onclick="depositar()">Depositar</button>
+    <div id="extrato"></div>
     <script src="./script.js"></script>
 </body>
 </html>
