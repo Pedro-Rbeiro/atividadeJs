@@ -37,14 +37,28 @@ body{
     color: green;
 }
 button{
-    background-color: white;
     border: 1px solid black;
     padding:5px;
     border-radius: 5px;
+
+}
+#saque-btn{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: 0.2s;
 }
-button:hover{
-    background-color: black;
+#deposito-btn{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.2s;
+}
+#saque-btn:hover{
+    background-color: rgb(221, 0, 0);
+    color: white;
+}
+#deposito-btn:hover{
+    background-color: rgb(0, 116, 0);
     color: white;
 }
