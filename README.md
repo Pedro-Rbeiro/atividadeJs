@@ -7,7 +7,6 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/Pedro-Rbeiro/AtividadeJs">
 </div>
 
-<p>Desenvolvido por Pedro R.</p>
 <div>
   <img width=30px height=30px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />          
   <img width=30px height=30px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />       
