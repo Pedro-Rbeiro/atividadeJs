@@ -1,44 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styyle.css" />
     <title>Mercado</title>
-</head>
-<body>
-    <h1>Mercado</h1>
-    <select name="" id="id_produto1">
-        <option value="0">...</option>
-        <option value="pao">Pão</option>
-        <option value="2">Presunto</option>
-        <option value="3">Queijo</option>
-    </select>
-    <select name="" id="id_produto2">
-        <option value="0">...</option>
-        <option value="1">Alface</option>
-        <option value="2">Rucula</option>
-        <option value="3">Brócolis</option>
-    </select>
-    <select name="" id="id_produto3">
-        <option value="0">...</option>
-        <option value="1">Linguiça</option>
-        <option value="2">Picanha</option>
-        <option value="3">Pé de galinha</option>
-    </select>
-    <select name="" id="id_produto4">
-        <option value="0">...</option>
-        <option value="1">Velho barreiro</option>
-        <option value="2">51</option>
-        <option value="3">Pitu</option>
-    </select>
-    <select name="" id="id_produto5">
-        <option value="0">...</option>
-        <option value="1">Simba</option>
-        <option value="2">Coca cola</option>
-        <option value="3">Sprite</option>
-    </select>
-    <button onclick="comprar()">Comprar</button>
+  </head>
+  <body>
+    <header>
+      <div class="margin-auto">
+        <div class="flex-header">
+          <img
+            id="logo-hyb"
+            width="20%"
+            height="20%"
+            src="./img/hybrid.png"
+            alt=""
+          />
+          <!-- <h2>compre</h2> -->
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="flex-container">
+        <div class="container">
+          <h1>Carrinho de compras</h1>
+          <div class="itens">
+            <select name="" id="produtos-limpeza">
+              <option value="0">...</option>
+              <option value="1">Detergente</option>
+              <option value="2">Desinfetante</option>
+              <option value="3">Água Sanitaria</option>
+            </select>
+            <select name="" id="graos-cereais">
+              <option value="0">...</option>
+              <option value="1">Arroz</option>
+              <option value="2">Feijão</option>
+              <option value="3">Pipoca</option>
+            </select>
+            <select name="" id="massas">
+              <option value="0">...</option>
+              <option value="1">Miojo</option>
+              <option value="2">Macarrão</option>
+              <option value="3">Massa de lasanha</option>
+            </select>
+            <select name="" id="cachaca">
+              <option value="0">...</option>
+              <option value="1">Velho barreiro</option>
+              <option value="2">51</option>
+              <option value="3">Pitu</option>
+            </select>
+            <select name="" id="refrigerantes">
+              <option value="0">...</option>
+              <option value="1">Simba</option>
+              <option value="2">Coca cola</option>
+              <option value="3">Sprite</option>
+            </select>
+          </div>
+          <div class="flex-btn">
+            <button class="cancel-btn" onclick="cancelar()">Cancelar</button>
+            <button class="buy-btn" onclick="comprar()">Comprar</button>
+          </div>
+          <div class="carrinho-flex">
+            <div id="compras-carrinho"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
