@@ -94,13 +94,16 @@ function comprar() {
   if (valorTotal > 0) {
     taxaValor = valorTotal * 0.1;
     carrinho.innerHTML = `
+    <div id="carrinho-child"
     <p>Produtos: <ol> ${liProdutos}</ol></p>
     <div class="valor-total"
     <p>Valor total: <strong>R$${valorTotal.toFixed(2)}</strong></p>
     <p>Valor que será pago ao vendedor<br>(10% do valor total): <strong>R$${taxaValor.toFixed(
       2
     )}</strong></p>
+    <button class="buyAgain-btn" onclick="buyAgain()">Comprar novamente</button>
     </valor-total>
+    </div>
 `;
   } else {
     alert("Insira pelo menos um produto para comprar!");
@@ -118,4 +121,11 @@ function cancelar() {
   item3.value = "0";
   item4.value = "0";
   item5.value = "0";
+}
+function buyAgain() {
+  const node = document.getElementById("compras-carrinho");
+  const child = document.getElementById("carrinho-child");
+  const removeNode = node.removeChild(child);
+  cancelar();
+  removeNode;
 }

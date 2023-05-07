@@ -33,8 +33,12 @@ header {
   background-color: #c11926;
   border-bottom: 5px solid rgb(16, 121, 126);
 }
-.flex-header > h1 {
-  font-weight: 400;
+.flex-header > h2 {
+  font-weight: 800;
+  display: flex;
+  justify-content: end;
+  font-size: 15px;
+  width: 100%;
   color: white;
 }
 .margin-auto {
@@ -49,8 +53,9 @@ header {
   background-color: rgb(255, 255, 255);
 }
 .flex-header {
-  width: 100%;
-
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 section {
@@ -79,7 +84,8 @@ section {
   margin: 10px 0;
   justify-content: space-between;
 }
-.buy-btn {
+.buy-btn,
+.buyAgain-btn {
   color: rgb(16, 121, 126);
   background-color: white;
   border: 2px solid rgb(16, 121, 126);
@@ -88,7 +94,11 @@ section {
   padding: 5px;
   transition: 0.2s;
 }
-.buy-btn:hover {
+.buyAgain-btn {
+  margin: 10px 0 0;
+}
+.buy-btn:hover,
+.buyAgain-btn:hover {
   color: white;
   border: 2px solid rgb(16, 121, 126);
   background-color: rgb(16, 121, 126);
