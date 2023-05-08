@@ -33,7 +33,11 @@ header {
   background-color: #c11926;
   border-bottom: 5px solid rgb(16, 121, 126);
 }
-.flex-header > h2 {
+#credit {
+  font-size: 12px;
+}
+.text-header > h2,
+h6 {
   font-weight: 800;
   display: flex;
   justify-content: end;
