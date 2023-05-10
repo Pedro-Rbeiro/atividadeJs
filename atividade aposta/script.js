@@ -3,6 +3,7 @@ let money = 100
 function apostar(){
     const numeroAposta = parseFloat(document.getElementById("numero-aposta").value)
     const valorAposta = parseFloat(document.getElementById("valor-aposta").value)
+    let win = false
     if(numeroAposta >9){
         return alert(`Insira um valor de no maximo "9"`)
     }
@@ -24,12 +25,22 @@ function apostar(){
         randomNum = Math.floor(Math.random()*10)
         arr.push(randomNum)
     }
+    for(j=0; j<arr.length; j++){
+        
+        if(arr[j]==numeroAposta){
+            win = true
+        }
+
+    }
+    console.log(win)
     console.log(arr)
-    if(arr.includes(numeroAposta)){
+    if(win){
         money += valorAposta
         alert(`Você ganhou R$${valorAposta} conto, seu saldo é de: ${money}` )
     }else{
-        money -= valorAposta
-        alert(`Você perdeu R$${valorAposta} :( Seu saldo é de ${money}`)
+    money -= valorAposta
+    alert(`Você perdeu R$${valorAposta} :( Seu saldo é de ${money}`)
     }
-}
+
+
+}   
