@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul{
+    display: flex;
+    list-style: none;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+
+}
 .sale{
     display: flex;
     justify-content: space-between;
@@ -13,10 +21,7 @@
     background: rgb(255,1,62);
     background: linear-gradient(90deg, rgba(255,1,62,1) 0%, rgba(224,101,54,1) 100%);
 }
-h1{
-    font-family: 'Roboto', sans-serif;
 
-}
 .sale-div>h1,.timer>h1{
     font-weight: 500;
     color: white;
@@ -55,8 +60,4 @@ h1{
     background-color: aqua;
     padding: 0 200px;
     width: 100%;
-}
-ul{
-    display: flex;
-    list-style: none;
 }
