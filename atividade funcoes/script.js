@@ -4,7 +4,11 @@ function login(){
     const emailInput = document.getElementById("email").value
     const senhaInput = document.getElementById("password").value
     auth = validarDados(emailInput,senhaInput)
-    auth? alert("bem vindo") : alert("não te conheço")
+    if (auth){
+        window.open("./page2.html",'_self')
+    }else{                 
+        alert("Usuario não encontrado")
+    }
     console.log(auth)
     function validarDados(email,senha){
         console.log(email,senha)
