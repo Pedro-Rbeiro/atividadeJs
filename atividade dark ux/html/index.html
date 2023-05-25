@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Vestido Bodycon Mini Cami Tartan</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                     <h1 class="sale-txt">Promoção dia dos namorados</h1>
                 </div>
                 <div class="timer">
-                    <h1 class="timer">Restam 21H 22M 04S</h1>
+                    <h1 class="timer">Restam: <span id="date-valentine"> 00H 00M 00S</span></h1>
                 </div>
             </nav>
         </div>
@@ -34,7 +34,7 @@
                 <ul class="departamento">
                     <li>Novidades</li>
                     <li>Tendencias</li>
-                    <li>Promoções</li>
+                    <li id="highlight">Promoções</li>
                     <li>Roupa</li>
                     <li>Utilidades</li>
                 </ul>
@@ -43,18 +43,24 @@
     </header>
     <section>
         <div class="container-flex">
-            
+            <!-- <p></p> -->
             <div class="container">
                 <div class="foto">
                     <div class="preview">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
-                        <img width="75px" height="100px" src="./img/pic1.webp" alt="">
+                        <img onmouseover="change1()" id="pic-1" width="75px" height="100px" src="../img/pic1.webp"
+                            alt="">
+                        <img onmouseover="change2()" id="pic-2" width="75px" height="100px" src="../img/pic2.webp"
+                            alt="">
+                        <img onmouseover="change3()" id="pic-3" width="75px" height="100px" src="../img/pic3.webp"
+                            alt="">
+                        <img onmouseover="change4()" id="pic-4" width="75px" height="100px" src="../img/pic4.webp"
+                            alt="">
+                        <img onmouseover="change5()" id="pic-5" width="75px" height="100px" src="../img/pic5.webp"
+                            alt="">
+                        <img onmouseover="change1()" id="pic-1" width="75px" height="100px" src="../img/pic1.webp"
+                            alt="">
                     </div>
-                    <img src="./img/pic1.webp" alt="">
+                    <img id="active-photo" src="../img/pic1.webp" alt="">
                 </div>
                 <div class="descricao">
                     <div class="div-desc-produto">
@@ -68,19 +74,20 @@
                         </div>
                         <div class="oferta-relampago-container">
                             <p>Oferta relampago</p>
-                            <p>Termina em 08H 26M 24S</p>
+                            <p>Termina em <span id="date"> 00H 00M 00S</span></p>
                         </div>
                         <div class="itens-restantes">
                             <p>Restam apenas 04 itens no estoque!</p>
                         </div>
-                            <button class="btn-comprar">
-                            <p>ADICIONAR AO CARRINHO</p>
-                        </button>
+                        <a href="./cart.html"> <button class="btn-comprar">
+                            <p> ADICIONAR AO CARRINHO</p>
+                        </button></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script defer src="../js/script.js"></script>
 </body>
 
 </html>
