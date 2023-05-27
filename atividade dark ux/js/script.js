@@ -48,7 +48,6 @@ function timer() {
 }
 
 function change(e) {
-  console.log(e)
   var activePhoto = (document.getElementById("active-photo").src =
     "../img/pic"+e+".webp");
   activePhoto;
