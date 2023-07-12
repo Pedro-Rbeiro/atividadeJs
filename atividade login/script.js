@@ -1,41 +1,42 @@
-let usernames = ["Miguel Chuteira", "chuteira", "Tejas Mere"];
-let emails = [
-  "nickolad.ng@outlook.com",
-  "psycho7k.pdro@gmail.com",
-  "lucas.ld@gmail.com",
-];
-let passwords = ["nickolas123", "urubu100", "n3twork04"];
+let user = [
+  {
+    username: 'Miguel Chuteira',
+    email: 'nickolad.ng@outlook.com',
+    password: 'nickolas123',
+    pfp: `<img src="img/1.jfif"</img>`
+  },
+  {
+    username: 'chuteira',
+    email: 'psycho7k.pdro@gmail.com',
+    pfp: `<img src="img/2.jfif"</img>`,
+    password: 'urubu100'
+  },
+  {
+    username: 'Tejas Mere',
+    email: 'lucas.ld@gmail.com',
+    pfp: `<img src="img/3.jfif"</img>`,
+    password: 'n3twork04'
+  },
+
+]
 function login() {
   let email = document.getElementById("id_email").value;
-
   let password = document.getElementById("id_password").value;
   let username = document.getElementById("id_username").value;
   const divImages = document.getElementById("images");
   let auth = false;
   let authUsername = "";
-  for (let i = 0; i < emails.length; i++) {
-    if (username == usernames[i]) {
-      if (email == emails[i]) {
-        if (password == passwords[i]) {
-          authUsername = usernames[i];
+  for (let i = 0; i < user.length; i++) {
+    if (username == user[i].username) {
+      if (email == user[i].email) {
+        if (password == user[i].password) {
+          authUsername = user[i].username;
+          divImages.innerHTML = user[i].pfp;
           console.log(authUsername);
           auth = true;
         }
       }
     }
-  }
-  switch (authUsername) {
-    case "Miguel Chuteira":
-      divImages.innerHTML = `<img src="img/1.jfif"</img>`;
-      break;
-    case "chuteira":
-      divImages.innerHTML = `<img src="img/2.jfif"</img>`;
-      break;
-    case "Tejas Mere":
-      divImages.innerHTML = `<img src="img/3.jfif"</img>`;
-      break;
-    default:
-      break;
   }
   if (auth) {
     alert("bem vindo");
