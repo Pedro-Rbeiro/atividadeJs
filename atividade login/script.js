@@ -8,14 +8,14 @@ let user = [
   {
     username: 'chuteira',
     email: 'psycho7k.pdro@gmail.com',
-    pfp: `<img src="img/2.jfif"</img>`,
-    password: 'urubu100'
+    password: 'urubu100',
+    pfp: `<img src="img/2.jfif"</img>`
   },
   {
     username: 'Tejas Mere',
     email: 'lucas.ld@gmail.com',
-    pfp: `<img src="img/3.jfif"</img>`,
-    password: 'n3twork04'
+    password: 'n3twork04',
+    pfp: `<img src="img/3.jfif"</img>`
   },
 
 ]
