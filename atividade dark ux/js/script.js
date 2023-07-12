@@ -48,7 +48,7 @@ function timer() {
 }
 
 function change(e) {
-  var activePhoto = (document.getElementById("active-photo").src =
-    "../img/pic"+e+".webp");
-  activePhoto;
+  var activePhoto = (document.getElementById("active-photo"))
+  activePhoto.src =
+  "../img/pic"+e+".webp"
 }

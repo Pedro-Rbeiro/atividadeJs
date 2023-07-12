@@ -140,7 +140,12 @@ img,
     margin: 0 0 20px 0;
     cursor: pointer;
 }
-
+.preview-photo:hover{
+    border: 1px solid black;
+}
+.preview:hover:not(:hover){
+    border: 0;
+}
 .container {
     display: flex;
     justify-content: center;

@@ -3,25 +3,25 @@ const extratoDiv = document.getElementById("extrato")
 let day = ""
 let hours = ""
 let saldo = 500
-numeroDiv.innerHTML=`
+numeroDiv.innerHTML = `
 <span><p> Saldo atual: <strong>R$${saldo}</strong></span> <br>
 `
-function time(){
+function time() {
     const today = new Date();
-    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
-    day = today.getUTCDate()+"/"+month[today.getMonth()]+"/"+today.getFullYear()
-    hours = today.getHours()+":"+ today.getMinutes()+":"+today.getSeconds();
+    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    day = today.getUTCDate() + "/" + month[today.getMonth()] + "/" + today.getFullYear()
+    hours = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 }
-function depositar(){
+function depositar() {
     const valorDeposito = parseFloat(document.getElementById("input-deposito").value)
-    if(valorDeposito !== valorDeposito){
+    if (valorDeposito !== valorDeposito) {
         alert("Por favor insira um valor para o depósito")
         return
     }
     console.log(day)
     console.log(valorDeposito)
     saldo += valorDeposito
-    numeroDiv.innerHTML=`
+    numeroDiv.innerHTML = `
     <span><p> Saldo atual: <strong>R$${saldo}</strong></span> <br>
     `
     time()
@@ -31,19 +31,19 @@ function depositar(){
     </p>
     `
 }
-function sacar(){
+function sacar() {
     const valorSaque = parseFloat(document.getElementById("input-saque").value)
-    if(valorSaque !== valorSaque){
+    if (valorSaque !== valorSaque) {
         alert("Por favor insira um valor para o saque")
         return
     }
-    if(valorSaque>saldo){
+    if (valorSaque > saldo) {
         alert("Saldo insuficiente para o saque!")
         return
     }
     console.log(valorSaque)
     saldo -= valorSaque
-    numeroDiv.innerHTML=`
+    numeroDiv.innerHTML = `
     <span><p> Saldo atual: <strong>R$${saldo}</strong></span> <br>
     `
     time()
