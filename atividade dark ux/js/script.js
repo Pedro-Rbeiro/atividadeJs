@@ -1,7 +1,7 @@
-timer();
+timer()
 function timer() {
   var countDownDate = new Date("May 31, 2023 15:37:25").getTime();
-  var countDownDateValentine = new Date("Jun 31, 2023 15:37:25").getTime();
+  var countDownDateValentine = new Date("Jul 31, 2023 15:37:25").getTime();
   var x = setInterval(function () {
     var now = new Date().getTime();
 
@@ -46,9 +46,10 @@ function timer() {
     }
   }, 1000);
 }
-
-function change(e) {
-  var activePhoto = (document.getElementById("active-photo"))
-  activePhoto.src =
-  "../img/pic"+e+".webp"
-}
+document.querySelectorAll('.preview-photo').forEach((c) => {
+  c.addEventListener('mouseover', () => {
+    const activePhoto = (document.getElementById("active-photo"))
+    activePhoto.src =
+      "../img/pic" + c.id.split('-', - 1)[1] + ".webp"
+  })
+})

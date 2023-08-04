@@ -34,7 +34,6 @@ function calculo() {
     ]
     eleitores.sort((a, b) => { return a.votos - b.votos })
     eleitores.forEach((e) => {
-
         console.log(`${e.candidato} ${e.votos}`)
     })
     for (i = 0; i < eleitores.length; i++) {

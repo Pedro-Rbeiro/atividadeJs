@@ -9,7 +9,7 @@ numeroDiv.innerHTML = `
 function time() {
     const today = new Date();
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    day = today.getUTCDate() + "/" + month[today.getMonth()] + "/" + today.getFullYear()
+    day = today.getUTCDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear()
     hours = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 }
 function depositar() {

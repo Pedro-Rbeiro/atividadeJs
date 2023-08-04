@@ -1,45 +1,44 @@
 let arr = []
 let money = 100
-function apostar(){
+function apostar() {
     const numeroAposta = parseFloat(document.getElementById("numero-aposta").value)
     const valorAposta = parseFloat(document.getElementById("valor-aposta").value)
     let win = false
-    if(numeroAposta >9){
+    if (numeroAposta > 9) {
         return alert(`Insira um valor de no maximo "9"`)
     }
-    if (numeroAposta !== numeroAposta){
+    if (numeroAposta !== numeroAposta) {
         return alert(`Insira um numero para a aposta`)
     }
-    if (valorAposta !== valorAposta){
+    if (valorAposta !== valorAposta) {
         return alert(`Insira um valor para a aposta`)
     }
-    if(valorAposta>money){
+    if (valorAposta > money) {
         alert(`Saldo insuficiente! Seu saldo é de R$${money}`)
         return
-    }else{
-        
+    } else {
+
     }
     let arr = []
     let randomNum = ""
-    for(i=0;i<=5;i++){
-        randomNum = Math.floor(Math.random()*10)
+    for (i = 0; i <= 5; i++) {
+        randomNum = Math.floor(Math.random() * 10)
         arr.push(randomNum)
     }
-    for(j=0; j<arr.length; j++){
-        
-        if(arr[j]==numeroAposta){
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] == numeroAposta) {
             win = true
         }
 
     }
     console.log(win)
     console.log(arr)
-    if(win){
+    if (win) {
         money += valorAposta
-        alert(`Você ganhou R$${valorAposta} conto, seu saldo é de: ${money}` )
-    }else{
-    money -= valorAposta
-    alert(`Você perdeu R$${valorAposta} :( Seu saldo é de ${money}`)
+        alert(`Você ganhou R$${valorAposta} conto, seu saldo é de: ${money}`)
+    } else {
+        money -= valorAposta
+        alert(`Você perdeu R$${valorAposta} :( Seu saldo é de ${money}`)
     }
 
 
