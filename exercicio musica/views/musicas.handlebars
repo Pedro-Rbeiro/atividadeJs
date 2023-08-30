@@ -1,0 +1,15 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <H1>Destaques do milenio</H1>
+        <ul>
+            {{#each musicas}}
+            <li>Nome: {{this.nome}} / Artista: {{this.artista}} / Album {{this.album}} / Data de lançamento {{this.anoLancamento}}</li>
+            {{/each}}
+        </ul>
+    </body>
+</html>
