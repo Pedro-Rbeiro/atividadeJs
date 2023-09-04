@@ -2,8 +2,25 @@ const express = require('express'); // importando modulo express
 const port = 3000;
 const exphbs = require('express-handlebars') // importando modulo handlebars
 const app = express();
-
+const mysql = require('mysql2')
 const musicas = require('./musicas') // importando modulo interno musicas
+
+const conn = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password: "bancodedados",
+    database: "google_db"
+})
+
+conn.connect((err)=>{
+    if(err){
+        console.log("deu ruim");
+        console.log(err)
+    }else{
+        console.log("Conectado ao banco de dados");
+    }
+})
+
 
 //BODY
 app.use(
