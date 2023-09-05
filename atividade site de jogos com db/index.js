@@ -2,24 +2,8 @@ const express = require('express');
 const port = 3000;
 const exphbs = require('express-handlebars')
 const app = express();
+const mysql = require('./db.js')
 
-const mysql = require('mysql2')
-const con = mysql.createConnection(
-    {
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "google_db"
-    }
-)
-con.connect((err) => {
-    if (err) {
-        console.log("algo deu errado");
-    } else {
-        console.log("conexão bem sucedida");
-    }
-
-})
 
 const sites = require('./sites')
 //BODY
@@ -45,35 +29,12 @@ app.use(express.static('public'))
 
 app.use("/sites", sites);
 
-const site = [
-    {
-        id: 1,
-        nome: "Futebol",
-        dificuldade: "Dificil"
-    },
-    {
-        id: 2,
-        nome: "Corrida de Cavalos",
-        dificuldade: "Dificil"
-    },
-    {
-        id: 3,
-        nome: "Crash",
-        dificuldade: "Médio"
-    },
-    {
-        id: 4,
-        nome: "Mines",
-        dificuldade: "Facil"
-    },
-]
-
 app.get('/', (req, res) => {
-    con.execute(`SELECT * FROM jogos`, (err, query)=>{
+    con.execute(`SELECT * FROM jogos`, (err, query) => {
         // console.log(err)
         console.log(query.length)
         queryLength = query.length
-        if(!query.length){
+        if (!query.length) {
             console.log('foi')
         }
         res.render('home', { query, queryLength })

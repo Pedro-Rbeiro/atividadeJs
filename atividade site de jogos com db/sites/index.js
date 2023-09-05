@@ -2,27 +2,10 @@ const express = require('express');
 const router = express.Router();
 const exphbs = require('express-handlebars')
 const app = express();
-
-const mysql = require('mysql2')
-const con = mysql.createConnection(
-    {
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "google_db"
-    }
-)
-con.connect((err) => {
-    if (err) {
-        console.log("algo deu errado");
-    } else {
-        console.log("conexão bem sucedida");
-    }
-
-})
+const mysql = require('../db.js')
 
 const hbs = exphbs.create({
-    partialsDir: ['views/partials'] 
+    partialsDir: ['views/partials']
 })
 
 
