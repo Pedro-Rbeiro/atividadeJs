@@ -34,9 +34,7 @@ app.get('/', (req, res) => {
         // console.log(err)
         console.log(query.length)
         queryLength = query.length
-        if (!query.length) {
-            console.log('foi')
-        }
+
         res.render('home', { query, queryLength })
     })
 
