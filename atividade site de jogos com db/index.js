@@ -41,9 +41,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/sites/:id', (req, res) => {
-    const selectedSite = site[parseInt(req.params.id) - 1];
-    console.log(selectedSite);
-    res.render("site", { choicedMusic: selectedSite });
+    con.execute((`SELECT * FROM jogos
+    WHERE id=${parseInt(req.params.id)}`), (err, query) => {
+        const selectedSite = query[0]
+        console.log(selectedSite.nome);
+        res.render("site", { choicedSite: selectedSite });
+    })
+
 })
 
 
