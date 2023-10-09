@@ -3,7 +3,8 @@ const port = 3000;
 const exphbs = require('express-handlebars')
 const app = express();
 const conn = require('./db/conn')
-const User = require('./models/User')
+const User = require('./models/User');
+const { raw } = require('mysql2');
 //BODY
 app.use(
     express.urlencoded({
@@ -24,13 +25,27 @@ app.set('view engine', 'handlebars')
 //css
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-
-    res.render('home')
+app.get('/', async (req, res) => {
+    const users = await User.findAll({raw: true})
+    res.render('home', {users})
 
 })
 app.get('/users/cadastrar',(req,res)=>{
     res.render('addUser')
+})
+app.post('/users/create', async (req,res)=>{
+    const nome = req.body.nome
+    const email = req.body.email
+    const senha = req.body.senha
+    const ocupacao = req.body.ocupacao
+    let alertas = req.body.alerta
+    console.log(req.body)
+
+    alertas == 'on' ? alertas = true : alertas = false 
+    await User.create({nome,email,senha,ocupacao,alertas})
+
+    res.redirect('/')
+
 })
 app.use((req, res) => {
     res.status(404).render("404");

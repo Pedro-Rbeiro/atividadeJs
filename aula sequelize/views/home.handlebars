@@ -5,9 +5,17 @@
 </div>
 
 
-{{#if canditados}}
-<h1>Há canditatods
-    
+{{#if users}}
+<h1>
+    <div class="users-container">
+        {{#each users}}
+        <ul>
+            <li class="itens">
+                {{this.id}} - <a href="/users/{{this.id}}"> - <span>{{this.nome}}</span> - {{this.ocupacao}}</a>
+            </li>
+        </ul>
+        {{/each}}
+    </div>
 </h1>
 {{else}}
 <div style="text-align: center;">

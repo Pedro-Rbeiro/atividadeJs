@@ -20,6 +20,7 @@ const User = db.define('User', {
     },
     alertas:{
         type: DataTypes.BOOLEAN,
+        
     }
     
 })

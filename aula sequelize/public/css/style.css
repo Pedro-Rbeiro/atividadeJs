@@ -37,7 +37,9 @@ a{
     text-decoration: none;
     color: white;
 }
-
+.itens > a {
+    color: black;
+}
 header a{
     float: left;
     margin-top: 1.4%;
