@@ -1,0 +1,9 @@
+<h1>Nome: {{userData.nome}}</h1>
+<h3>Trabalho: {{userData.ocupacao}}</h3>
+<h3>Email: {{userData.email}}</h3>
+<form action="/users/delete/{{userData.id}}" method="post">
+    <button type="submit">
+        Deletar
+    </button>
+
+</form>

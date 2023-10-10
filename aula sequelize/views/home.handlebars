@@ -6,17 +6,11 @@
 
 
 {{#if users}}
-<h1>
     <div class="users-container">
         {{#each users}}
-        <ul>
-            <li class="itens">
-                {{this.id}} - <a href="/users/{{this.id}}"> - <span>{{this.nome}}</span> - {{this.ocupacao}}</a>
-            </li>
-        </ul>
+        {{> cands}}
         {{/each}}
     </div>
-</h1>
 {{else}}
 <div style="text-align: center;">
     <h1>Não há canditados... </h1>

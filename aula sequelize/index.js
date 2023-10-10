@@ -39,11 +39,25 @@ app.post('/users/create', async (req,res)=>{
     const senha = req.body.senha
     const ocupacao = req.body.ocupacao
     let alertas = req.body.alerta
-    console.log(req.body)
-
+    if (nome == '' || email == '' || senha == '' || ocupacao == '') {
+        return res.send("<script> alert('Preencha todos os campos'); window.location.replace('/users/cadastrar')</script>")
+    }
     alertas == 'on' ? alertas = true : alertas = false 
     await User.create({nome,email,senha,ocupacao,alertas})
 
+    res.redirect('/')
+
+})
+app.get('/users/:id', async (req,res)=>{
+    const id = parseInt(req.params.id)
+
+    const userData = await User.findOne({where: id, raw: true})
+    res.render('user', {userData})
+})
+app.post('/users/delete/:id', async (req,res) => {
+    const id = parseInt(req.params.id)
+
+    User.destroy({where: {id: id}})
     res.redirect('/')
 
 })
