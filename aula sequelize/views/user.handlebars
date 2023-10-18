@@ -1,9 +1,28 @@
 <h1>Nome: {{userData.nome}}</h1>
 <h3>Trabalho: {{userData.ocupacao}}</h3>
 <h3>Email: {{userData.email}}</h3>
+
 <form action="/users/delete/{{userData.id}}" method="post">
     <button type="submit">
         Deletar
     </button>
-
 </form>
+<form action="/users/update/{{userData.id}}" method="get">
+    <button type="submit">Atualizar</button>
+</form>
+<form action="/users/register-adress/{{userData.id}}" method="get">
+    <button type="submit">Cadastrar endereço</button>
+</form>
+
+
+
+<div>
+{{#if xp}}
+<h1>Experiencias</h1>
+{{#each xp}}
+{{> xps}}
+{{/each}}
+{{else}}
+<h3>sem experiencia kkkk fodido</h3>
+{{/if}}
+</div>

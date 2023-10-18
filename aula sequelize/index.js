@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars')
 const app = express();
 const conn = require('./db/conn')
 const User = require('./models/User');
-const { raw } = require('mysql2');
+const Experiences = require('./models/Xp')
 //BODY
 app.use(
     express.urlencoded({
@@ -48,24 +48,77 @@ app.post('/users/create', async (req,res)=>{
     res.redirect('/')
 
 })
+app.get('/users/update/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    
+    const user = await User.findOne({where: id, raw: true});
+
+    res.render('attUser', { user });
+});
+
+app.post('/users/update/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const senha = req.body.senha;
+    const ocupacao = req.body.ocupacao;
+    let alertas = req.body.alerta;
+
+    alertas == "on" ? (alertas = true) : (alertas = false);
+
+    if (email.includes(".com") == false) {
+        return res.send("<script>alert('Está faltando '.com' no email'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    if (nome == "" || email == "" || senha == "" || ocupacao == "" ) {
+        return res.send("<script>alert('Preencha todos os dados'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    const user = {
+        nome,
+        email,
+        senha,
+        ocupacao
+    }
+
+    await User.update(user , {where: {id: id}});
+
+    res.redirect('/')
+})
 app.get('/users/:id', async (req,res)=>{
     const id = parseInt(req.params.id)
-
+    const xp = await Experiences.findAll({where: {UserId: id}, raw: true})
     const userData = await User.findOne({where: id, raw: true})
-    res.render('user', {userData})
+    res.render('user', {userData,xp})
 })
 app.post('/users/delete/:id', async (req,res) => {
     const id = parseInt(req.params.id)
 
     User.destroy({where: {id: id}})
     res.redirect('/')
+})
+app.get('/users/register-adress/:id', async (req, res) =>{
+    const id = parseInt(req.params.id)
+    console.log(id);
+    res.render('addExp', {id} )
+    
+})
 
+app.post('/register-adress/create/:id', async (req, res) =>{
+    const empresa = req.body.empresa
+    const cargo = req.body.cargo
+    const descricao = req.body.descricao
+    const UserId = req.params.id
+
+    await Experiences.create({empresa, cargo, descricao, UserId})
+
+    res.redirect('/')
 })
 app.use((req, res) => {
     res.status(404).render("404");
 })
 
-conn.sync().then(() =>{
+conn.sync({force:true}).then(() =>{
     app.listen(3000)
 }).catch((err) =>{
     console.log(err)
